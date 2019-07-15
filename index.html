@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="dark-theme" lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Angular</title>
+</head>
+
+<body>
+
+    <div class="w3-bar w3-theme-dark">
+        <a href="#!dashboard" class="w3-bar-item w3-button">Dashboard</a>
+        <a href="#!create-note" class=" w3-bar-item w3-button w3-hide-small">Create Note</a>
+        <a href="#!list-note" class="w3-bar-item w3-button w3-hide-small">List of Notes</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div id="demo" class="w3-bar-block w3-theme-dark w3-hide w3-hide-large w3-hide-medium">
+        <a href="#!create-note" class=" w3-bar-item w3-button">Create Note</a>
+        <a href="#!list-note" class="w3-bar-item w3-button">List of Notes</a>
+    </div>
+
+    <div class="ng-view"></div>
+
+    <!-- inline CSS script -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("demo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    <!-- Required Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
+    <!-- Custom Scripts -->
+    <script src="scripts/app.js"></script>
+    <!-- Services -->
+    <script src="scripts/Services/UserService.js"></script>
+    <script src="scripts/Services/NoteService.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/Controllers/DashboardController.js"></script>
+    <script src="scripts/Controllers/LoginController.js"></script>
+    <script src="scripts/Controllers/CreateNoteController.js"></script>
+    <script src="scripts/Controllers/ListNoteController.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<div ng-controller="ListNoteController">
+    <div class="w3-container w3-display-center">
+        <table class="w3-table-all w3-large w3-text-black w3-margin-top">
+            <thead>
+                <tr class="w3-theme-d2">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Is Completed</th>
+                </tr>
+
+            </thead>
+            <tr class="w3-hover-theme" ng-repeat="note in notes track by note.id" ng-click="editNote(note)">
+                <td> <a ng-href="#!/create-note/{{ note.id }}">{{ note.id }}</a></td>
+                <td><input type="text" class="w3-input w3-border-0" ng-model="note.title"/></td>
+                <td>
+                    <input class="w3-check" type="checkbox" ng-model="note.isCompleted" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
